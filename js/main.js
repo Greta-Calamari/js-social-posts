@@ -175,10 +175,12 @@ button.forEach((button)=>{
   button.addEventListener('click', iLikeIt);
 });
 
-
+// devo definire il nuovo array
+const arrId =''; 
+// nella funzione gli dico di puishare gli id nell'array
 
 function iLikeIt(event){
-// impedisco che ogni volta che clicco su un lin k mi ritorni alla pagina iniziale devo richiamarla nella funzione
+// impedisco che ogni volta che clicco su un link mi ritorni alla pagina iniziale devo richiamarla nella funzione
 event.preventDefault()
 // metto la classe col colore che trovo nel css
 if(!this.classList.contains('like-button--liked')){
@@ -188,6 +190,25 @@ if(!this.classList.contains('like-button--liked')){
 this.classList.remove('like-button--liked');
 
 }
+const data = this.dataset.postid;
+    console.log(data);
+    //variabile array countatore
+    const counter = Array.from(document.getElementsByClassName('js-likes-counter'))
+    counter.forEach((element)=>{
+        //prendo il valore finale dell'id di ogni elemento
+        const elementId = element.id.charAt(element.id.length-1);
+        console.log(elementId)
+        // verifico se corrispondono
+        if(data === elementId){
+            console.log(elementId)
+            element.innerHTML++
+        };
+    });
+    arrId.push(data)
+    console.log(arrId)
+    
+
+
 };
 
 
