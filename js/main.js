@@ -89,7 +89,7 @@ const posts = [
                 <div class="likes js-likes">
                     <div class="likes__cta">
                         <a class="like-button  js-like-button" href="#" data-postid="1">
-                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
+                            <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true" ></i>
                             <span class="like-button__label">Mi Piace</span>
                         </a>
                     </div>
@@ -134,9 +134,9 @@ function stampaCard(){
             <div class="post__footer">
                 <div class="likes js-likes">
                     <div class="likes__cta">
-                        <a class="like-button  js-like-button" href="#" data-postid="1">
+                        <a class="like-button  js-like-button" href="#" data-postid="1" id='btn-text'>
                             <i class="like-button__icon fas fa-thumbs-up" aria-hidden="true"></i>
-                            <span class="like-button__label">Mi Piace</span>
+                            <span class="like-button__label" id='btn-text'>Mi Piace</span>
                         </a>
                     </div>
                     <div class="likes__counter">
@@ -160,17 +160,32 @@ stampaCard();
 
 // devo 'cliccare' sul tasto mi piace quindi devo prendere il bottone e metterci una funzione addd event listener
 
-const button =document.querySelector('.like-button');
-button.addEventListener('click',iLikeIt);
-console.log(button);
+// const button =document.querySelector('.like-button');
+// button.addEventListener('click',iLikeIt);
+// button.addEventListener("click", anymore);
+// // console.log(button);
+
+
 
 function iLikeIt(){
+    // cambiamo il colore al testo del bottone
+    // richiamo il testo del bottone
+    let btnText = document.getElementById('btn-text').style.color = "green";
     
 }
 
 
+// funzione che al secondo click tolgo il colore
+function anymore(){
+    button.remove(style.color);
 
+}
 
+const button =document.querySelector('.like-button');
+button.addEventListener('click',() => {    
+    iLikeIt();
+    anymore();    
+});
 
 
 
