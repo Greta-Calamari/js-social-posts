@@ -160,50 +160,27 @@ stampaCard();
 
 // devo 'cliccare' sul tasto mi piace quindi devo prendere il bottone e metterci una funzione addd event listener
 
-// const button =document.querySelector('.like-button');
-// button.addEventListener('click',iLikeIt);
-// button.addEventListener("click", anymore);
-// // console.log(button);
+
+// button è una collection ma a me serve un array
+
+const button = Array.from(document.getElementsByClassName('like-button'));
+console.log(button);
+//  l'ho trasformato in array cosi posso utilizzare i metodi dell'array
+
+// ogni volta che clicco il bottone metto mi piace
+// e nella stessa funzione metto gli id in un nuovo array
 
 
-
-function iLikeIt(){
-    // cambiamo il colore al testo del bottone
-    // richiamo il testo del bottone
-    let btnText = document.getElementById('btn-text').style.color = "green";
-    
-}
-
-
-// funzione che al secondo click tolgo il colore
-function anymore(){
-    button.remove(style.color);
-
-}
-
-const button =document.querySelector('.like-button');
-button.addEventListener('click',() => {    
-    iLikeIt();
-    anymore();    
+button.forEach((button)=>{
+  button.addEventListener('click', iLikeIt);
 });
 
+function iLikeIt(event){
+// impedisco che ogni volta che clicco su un lin k mi ritorni alla pagina iniziale devo richiamarla nella funzione
+event.preventDefault()
+
+
+}
 
 
 
-
-
-
-
-// ****BONUS**
-// >
-// > 1. Formattare le date in formato italiano (gg/mm/aaaa)
-// > 2. Gestire l'assenza dell'immagine profilo con un elemento di fallback che contiene le iniziali dell'utente (es. Luca Formicola > LF).
-// > 3. Al click su un pulsante "Mi Piace" di un post, se abbiamo già cliccato dobbiamo decrementare il contatore e cambiare il colore del bottone.
-// >
-// > **Consigli del giorno:**
-// >
-// > Ragioniamo come sempre a step.
-// > Prima scriviamo nei commenti la logica in italiano e poi traduciamo in codice.
-// > console.log() è nostro amico.
-// > Quando un pezzo di codice funziona, chiediamoci se possiamo scomporlo in funzioni più piccole.
-//  Buon lavoro! 
