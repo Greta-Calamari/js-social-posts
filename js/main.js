@@ -158,7 +158,15 @@ stampaCard();
 // Salviamo in un secondo array gli id dei post ai quali abbiamo messo il like.
 
 
+// devo 'cliccare' sul tasto mi piace quindi devo prendere il bottone e metterci una funzione addd event listener
 
+const button =document.querySelector('.like-button');
+button.addEventListener('click',iLikeIt);
+console.log(button);
+
+function iLikeIt(){
+    
+}
 
 
 
