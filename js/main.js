@@ -175,12 +175,15 @@ button.forEach((button)=>{
   button.addEventListener('click', iLikeIt);
 });
 
+
+
 function iLikeIt(event){
 // impedisco che ogni volta che clicco su un lin k mi ritorni alla pagina iniziale devo richiamarla nella funzione
 event.preventDefault()
-
-
-}
+this.classList.add('like-button--liked');
+// metto la classe col colore che trovo nel css
+this.removeEventListener('click', iLikeIt);
+};
 
 
 
