@@ -123,13 +123,13 @@ function stampaCard(){
                     </div>
                     <div class="post-meta__data">
                         <div class="post-meta__author">${element.author.name}</div>
-                        <div class="post-meta__time">4 mesi fa</div>
+                        <div class="post-meta__time">${element.created}</div>
                     </div>                    
                 </div>
             </div>
             <div class="post__text">Placeat libero ipsa nobis ipsum quibusdam quas harum ut. Distinctio minima iusto. Ad ad maiores et sint voluptate recusandae architecto. Et nihil ullam aut alias.</div>
             <div class="post__image">
-                <img src="https://unsplash.it/600/300?image=171" alt="">
+                <img src="${element.author.image}" alt="">
             </div>
             <div class="post__footer">
                 <div class="likes js-likes">
@@ -140,7 +140,7 @@ function stampaCard(){
                         </a>
                     </div>
                     <div class="likes__counter">
-                        Piace a <b id="like-counter-1" class="js-likes-counter">80</b> persone
+                        Piace a <b id="like-counter-1" class="js-likes-counter">${element.likes}</b> persone
                     </div>
                 </div> 
             </div> 
